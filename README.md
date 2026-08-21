@@ -8,6 +8,8 @@ Un simulateur réaliste de notre Système Solaire avec plusieurs fonctionnalité
 
 Le simulateur est pour le moment en cours de création, j'essaye de l'avancer le plus vite possible pour que la "première" vraie version sorte. En attendant, vous aurez juste son évolution au cours du temps. Sachez également que le README évoluera également avec le projet.
 
+Le code en lui même n'est peut être pas optimisé. Je compte essayer de l'optimiser aussi à l'avenir même si mes talents dans l'optimisation sont plutôt mauvaise, je suis donc pas contre des aides pour cela ^^
+
 -----------------------------------------------------------------
 
 # CONTEXTE
