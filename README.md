@@ -15,6 +15,8 @@ Depuis mon plus jeune âge, j'ai toujours été passionné par l'espace et ses d
 ## Projet
  
 Le projet est donc un `.py` qui peut être directement lancé via Visual Studio ou bien via un terminal. Comme indiqué au-dessus, le projet est pour le moment en cours de création tout comme ce `README` et je continue d'avancer dessus. Ce dépôt évoluera donc avec le projet ^^
+
+J'essaye de faire en sorte que le projet soit le plus réaliste possible avec des échelles cohérente.
  
 ## Comment la simulation fonctionne ?
  
