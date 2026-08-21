@@ -1,10 +1,11 @@
 '''
 @author: Rolgndar
-@version: 1.2
+@version: 1.3
 @date: 21-08-2026
 @Changelog:
     - 1.1 : Changement de la taille des corps célestes pour une meilleurs vissualisation.
     - 1.2 : Correction des distances entre les corps célestes.
+    - 1.3 : Correction des vitesses des corps célestes.
 '''
 
 '''
@@ -52,13 +53,13 @@ def simulation():
 
             # - DEPLACEMENT DE LA CAMERA (AXE X ET Y) -
             touches = pygame.key.get_pressed()
-            if touches[pygame.K_q]:
+            if touches[pygame.K_d]:
                 cam_x -= 100
-            elif touches[pygame.K_d]:
+            elif touches[pygame.K_q]:
                 cam_x += 100
-            elif touches[pygame.K_z]:
-                cam_y -= 100
             elif touches[pygame.K_s]:
+                cam_y -= 100
+            elif touches[pygame.K_z]:
                 cam_y += 100
 
             # - RECENTRER -
@@ -79,14 +80,14 @@ def simulation():
 
 
         # - PIVOTEMENT DES PLANETES AUTOUR DU SOLEIL -
-        angle_mercure = pygame.time.get_ticks() * 0.000001 * VG.nv_VITESSE_MERCURE
-        angle_venus = pygame.time.get_ticks() * 0.000001 * VG.nv_VITESSE_VENUS
-        angle_terre = pygame.time.get_ticks() * 0.000001 * VG.nv_VITESSE_TERRE
-        angle_mars = pygame.time.get_ticks() * 0.000001 * VG.nv_VITESSE_MARS
-        angle_jupiter = pygame.time.get_ticks() * 0.000001 * VG.nv_VITESSE_JUPITER
-        angle_saturne = pygame.time.get_ticks() * 0.000001 * VG.nv_VITESSE_SATURNE
-        angle_uranus = pygame.time.get_ticks() * 0.000001 * VG.nv_VITESSE_URANUS
-        angle_neptune = pygame.time.get_ticks() * 0.000001 * VG.nv_VITESSE_NEPTUNE
+        angle_mercure = pygame.time.get_ticks() * VG.FACTEUR_TEMPS * VG.nv_VITESSE_MERCURE
+        angle_venus = pygame.time.get_ticks() * VG.FACTEUR_TEMPS * VG.nv_VITESSE_VENUS
+        angle_terre = pygame.time.get_ticks() * VG.FACTEUR_TEMPS * VG.nv_VITESSE_TERRE
+        angle_mars = pygame.time.get_ticks() * VG.FACTEUR_TEMPS * VG.nv_VITESSE_MARS
+        angle_jupiter = pygame.time.get_ticks() * VG.FACTEUR_TEMPS * VG.nv_VITESSE_JUPITER
+        angle_saturne = pygame.time.get_ticks() * VG.FACTEUR_TEMPS * VG.nv_VITESSE_SATURNE
+        angle_uranus = pygame.time.get_ticks() * VG.FACTEUR_TEMPS * VG.nv_VITESSE_URANUS
+        angle_neptune = pygame.time.get_ticks() * VG.FACTEUR_TEMPS * VG.nv_VITESSE_NEPTUNE
 
         # - MISE A JOUR DES POSITIONS DES PLANETES -
         mercure_x = centre_x + VG.DISTANCE_MERCURE * zoom * np.cos(angle_mercure)
