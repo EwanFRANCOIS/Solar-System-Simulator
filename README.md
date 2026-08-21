@@ -21,6 +21,33 @@ Le projet est donc un `.py` qui peut être directement lancé via Visual Studio 
 On passe aux choses sérieuses !
  
 Pour le moment, le simulateur comporte juste les planètes qui tournent autour du soleil, leurs vitesses ne sont en aucun cas réalistes tout comme leurs distances (les corps célestes sont quand même bien éloignés les uns des autres)
+
+### L’installation :
+
+Vous avez d'abord besoin d'avoir sur votre ordinateur la dernière version de python installé voici le lien pour l'installation de python :
+
+https://www.python.org/downloads/
+
+La simulation utilise les bibliothèques numpy et pygame. Ci-dessous sont présente les commandes à copier coller dans un Terminal / CMD pour faire tourner le simulateur sans problème.
+
+numpy (Windows) :
+`pip install numpy`
+
+numpy (MacOS / Linux) :
+`pip3 install numpy`
+
+pygame (Windows) :
+`pip install pygame`
+
+pygame (MacOS / Linux) :
+`pip3 install pygame`
+
+Si pip n'est pas reconnu ou que la commande entrée vous marque une erreur, entrez ceci à la place :
+
+numpy :
+`python -m pip install numpy`
+pygame :
+`python -m pip install pygame` 
  
 ### Les commandes :
  
