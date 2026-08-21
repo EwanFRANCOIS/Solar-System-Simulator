@@ -1,9 +1,10 @@
 '''
 @author: Rolgndar
-@version: 1.1
+@version: 1.2
 @date: 09-08-2026
 @Changelog:
     - 1.1 : Changement de la taille des corps célestes pour une meilleurs vissualisation.
+    - 1.2 : Ajout des mouvements circulaire des corps célestes (leurs placement ne sont pas réaliste, sera amélioré dans la prochaine version)
 
 '''
 
