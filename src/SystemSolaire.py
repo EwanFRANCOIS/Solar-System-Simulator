@@ -1,12 +1,13 @@
 '''
 @author: Rolgndar
-@version: 1.4
+@version: 1.5
 @date: 22-08-2026
 @Changelog:
     - 1.1 : Changement de la taille des corps célestes pour une meilleurs vissualisation.
     - 1.2 : Correction des distances entre les corps célestes.
     - 1.3 : Correction des vitesses des corps célestes.
     - 1.4 : Ajout des trajectoires de chaques corps célestes pour aider à la visualisation.
+    - 1.5 : Changement des touches pour le zoom.
 '''
 
 '''
@@ -48,14 +49,6 @@ def simulation():
                 if event.key == pygame.K_p:
                     VG.pause = not VG.pause
 
-            if event.type == pygame.MOUSEWHEEL:
-                if event.y > 0:
-                    zoom *= 1.1  # Zoom avant
-                    
-                elif event.y < 0:
-                    zoom /= 1.1  # Zoom arrière
-                    
-
             # - DEPLACEMENT DE LA CAMERA (AXE X ET Y) -
             touches = pygame.key.get_pressed()
             if touches[pygame.K_d]:
@@ -66,6 +59,14 @@ def simulation():
                 cam_y -= 100
             elif touches[pygame.K_z]:
                 cam_y += 100
+
+            # - ZOOMER -
+            if touches[pygame.K_UP]:
+                zoom *= 1.1
+
+            # - DEZOOMER -
+            if touches[pygame.K_DOWN]:
+                zoom /= 1.1
 
             # - RECENTRER -
             if touches[pygame.K_r]:
