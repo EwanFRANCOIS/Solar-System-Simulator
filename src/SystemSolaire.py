@@ -1,11 +1,12 @@
 '''
 @author: Rolgndar
-@version: 1.3
-@date: 21-08-2026
+@version: 1.4
+@date: 22-08-2026
 @Changelog:
     - 1.1 : Changement de la taille des corps célestes pour une meilleurs vissualisation.
     - 1.2 : Correction des distances entre les corps célestes.
     - 1.3 : Correction des vitesses des corps célestes.
+    - 1.4 : Ajout des trajectoires de chaques corps célestes pour aider à la visualisation.
 '''
 
 '''
@@ -39,9 +40,13 @@ def simulation():
     cam_y = 0
 
     while running:
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_p:
+                    VG.pause = not VG.pause
 
             if event.type == pygame.MOUSEWHEEL:
                 if event.y > 0:
@@ -68,9 +73,16 @@ def simulation():
                 cam_y = 0
                 zoom = 1.0
 
+            # - PAUSE -
+            if touches[pygame.K_p]:
+                break
+
             # - QUITTER -
             if touches[pygame.K_ESCAPE]:
                 running = False
+
+        if VG.pause == True:
+            continue
 
         ecran.fill((0, 0, 0))    # Fond noir
 
@@ -115,6 +127,16 @@ def simulation():
         neptune_y = centre_y + VG.DISTANCE_NEPTUNE * zoom * np.sin(angle_neptune)
 
 
+        # - DESSINS DES TRAJECTOIRES DES CORPS CELESTES -
+        pygame.draw.circle(ecran, VG.white, (centre_x, centre_y), VG.DISTANCE_MERCURE * zoom, 1, False, False, False, False)
+        pygame.draw.circle(ecran, VG.white, (centre_x, centre_y), VG.DISTANCE_VENUS * zoom, 1, False, False, False, False)
+        pygame.draw.circle(ecran, VG.white, (centre_x, centre_y), VG.DISTANCE_TERRE * zoom, 1, False, False, False, False)
+        pygame.draw.circle(ecran, VG.white, (centre_x, centre_y), VG.DISTANCE_MARS * zoom, 1, False, False, False, False)
+        pygame.draw.circle(ecran, VG.white, (centre_x, centre_y), VG.DISTANCE_JUPITER * zoom, 1, False, False, False, False)
+        pygame.draw.circle(ecran, VG.white, (centre_x, centre_y), VG.DISTANCE_SATURNE * zoom, 1, False, False, False, False)
+        pygame.draw.circle(ecran, VG.white, (centre_x, centre_y), VG.DISTANCE_URANUS * zoom, 1, False, False, False, False)
+        pygame.draw.circle(ecran, VG.white, (centre_x, centre_y), VG.DISTANCE_NEPTUNE * zoom, 1, False, False, False, False)
+
         # - DESSINS DES CORPS CELESTES -
         pygame.draw.circle(ecran, VG.COLOR_SOLEIL, (centre_x, centre_y), VG.TAILLE_SOLEIL * zoom)  # Dessine le Soleil
         pygame.draw.circle(ecran, VG.COLOR_MERCURE, (mercure_x, mercure_y), VG.TAILLE_MERCURE * zoom)  # Dessine Mercure
@@ -125,6 +147,9 @@ def simulation():
         pygame.draw.circle(ecran, VG.COLOR_SATURNE, (saturne_x, saturne_y), VG.TAILLE_SATURNE * zoom) # Dessine Saturne
         pygame.draw.circle(ecran, VG.COLOR_URANUS, (uranus_x, uranus_y), VG.TAILLE_URANUS * zoom) # Dessine Uranus
         pygame.draw.circle(ecran, VG.COLOR_NEPTUNE, (neptune_x, neptune_y), VG.TAILLE_NEPTUNE * zoom) # Dessine Neptune
+
+        # - DESSINS DES LIGNES DES TRAJECTOIRES -
+        
 
         pygame.display.flip()
         clock.tick(60)           # Limite à 60 FPS
