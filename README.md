@@ -58,5 +58,7 @@ pygame :
 - `SCROLL` : zoomer ou dézoomer sur l'écran.
  
 - `R` : réinitialiser la position et le zoom.
+
+-  `P` : Fige l'écran (et non la simulation ! Celle-ci tournera en fond mais l'écran sera figé, cette touche est assez situationnelle mais elle peut être utile pour certains cas. Un bouton pause sera mis à disposition dans les versions à venir.)
  
 D'autres commandes arriveront dans les versions à venir.
