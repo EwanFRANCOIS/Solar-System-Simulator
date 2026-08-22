@@ -22,7 +22,7 @@ J'essaye de faire en sorte que le projet soit le plus réaliste possible avec de
  
 On passe aux choses sérieuses !
  
-Pour le moment, le simulateur comporte juste les planètes qui tournent autour du soleil, leurs vitesses ne sont en aucun cas réalistes tout comme leurs distances (les corps célestes sont quand même bien éloignés les uns des autres)
+Pour le moment, le simulateur comporte juste les planètes qui tournent autour du soleil, j'ai essayé de rendre leurs vitesse réaliste en divisant la distance SOLEIL - CORPS CÉLESTE par leurs vitesses réelles (km/s). Leurs distances ont étaient converties en pixel de sorte à ce qu'on puisse voir les planètes.
 
 ### L’installation :
 
