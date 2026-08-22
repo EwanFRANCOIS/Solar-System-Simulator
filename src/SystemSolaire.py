@@ -13,7 +13,7 @@
 '''
 Ce code est un simulateur du système solaire.
 Il permet de visualiser les orbites des planètes qui tourne autour du soleil en temps réel.
-Cela est affiché avec la bibliothèque Pygame et les calculs sont soit effectués à la main où bien fait avec la bibliothèque Numpy et Poliastro.
+Cela est affiché avec la bibliothèque Pygame et les calculs sont soit effectués à la main où bien fait avec la bibliothèque Numpy.
 '''
 
 import pygame
