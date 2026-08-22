@@ -55,7 +55,7 @@ pygame :
  
 - `Z/Q/S/D` : contrôles de la caméra et se déplacer (celle-ci est un peu sensible et vous pouvez très vite voler loin, elle sera améliorée à l'avenir).
  
-- `SCROLL` : zoomer ou dézoomer sur l'écran.
+- `+/-` : zoomer ou dézoomer sur l'écran.
  
 - `R` : réinitialiser la position et le zoom.
 
